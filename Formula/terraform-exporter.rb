@@ -13,18 +13,18 @@ class TerraformExporter < Formula
   depends_on "python3" => :optional
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.0.0/terraform-exporter_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "ccdd8efb10dfdafd50cc3dfeecae523067030ab3c50a62d8602c528d3a1f3154"
+    if Hardware::CPU.intel?
+      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.0.0/terraform-exporter_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "9d888746442cf3ef5a8c15b062c86eccc23aef4747a2fd2e42ad934a671133d6"
 
       def install
         bin.install "terraform-exporter"
         prefix.install "LICENSE"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.0.0/terraform-exporter_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6f0c7a3708a49095856992c4558e6370fce595427f589f92415f647e3e29a293"
+    if Hardware::CPU.arm?
+      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.0.0/terraform-exporter_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "150ccea784821e1d2602d595e91435450d663e726c17093c129dec41169985d4"
 
       def install
         bin.install "terraform-exporter"
@@ -36,7 +36,7 @@ class TerraformExporter < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.0.0/terraform-exporter_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "c5fd2273f4689406863a503b7d70ea04aa3bd5d7731b7b113a8bb5e04eccee53"
+      sha256 "6b48a02edd8b7ff9fcee47bca437f484c8afca14c3595cb3d674a21034abdd9f"
 
       def install
         bin.install "terraform-exporter"
@@ -45,7 +45,7 @@ class TerraformExporter < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.0.0/terraform-exporter_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d0a662be33c0c004bf819f9dec2eff84bb54797e45d3973acc5da42fa11324cd"
+      sha256 "4686e0b9a33003f520e3fe1d9a3a658ffc5f5434a215b2f695ac681dee96ac9e"
 
       def install
         bin.install "terraform-exporter"
