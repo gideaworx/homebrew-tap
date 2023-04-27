@@ -9,8 +9,8 @@ class TerraformExporterAT012 < Formula
   license "MIT"
 
   depends_on "nodejs" => :optional
-  depends_on "python3" => :optional
   depends_on "openjdk@17" => :optional
+  depends_on "python3" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
@@ -55,6 +55,6 @@ class TerraformExporterAT012 < Formula
   end
 
   test do
-    system "#{bin}/terraform-exporter --version"
+    system "#{bin}/terraform-exporter", "--version"
   end
 end
