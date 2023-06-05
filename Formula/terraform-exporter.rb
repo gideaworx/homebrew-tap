@@ -5,7 +5,7 @@
 class TerraformExporter < Formula
   desc "Export artifacts to terraform files"
   homepage ""
-  version "1.2.0"
+  version "1.2.2"
   license "MIT"
 
   depends_on "nodejs" => :optional
@@ -13,8 +13,8 @@ class TerraformExporter < Formula
   depends_on "python3" => :optional
 
   on_macos do
-    url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.2.0/terraform-exporter_darwin_all.zip"
-    sha256 "51da2c1fcc6eaedbbf08b8a4dfb53d717e0333443b9d50d20926d1fe637eebd7"
+    url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.2.2/terraform-exporter_darwin_all.zip"
+    sha256 "9035e6c5003732a35ce7dfbd8f72b5f06eba45b11c2840d6550c596fcc398e9f"
 
     def install
       bin.install "terraform-exporter"
@@ -23,16 +23,16 @@ class TerraformExporter < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.2.0/terraform-exporter_linux_arm64.zip"
-      sha256 "9307337398fd523343674fca8b4eb0d776fa0b7279599ab73ca022e861fabaa6"
+      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.2.2/terraform-exporter_linux_arm64.zip"
+      sha256 "caf7d2835d6bd26aa238e254d87b108afecb2a3489d7b31dd4559f478571c017"
 
       def install
         bin.install "terraform-exporter"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.2.0/terraform-exporter_linux_amd64.zip"
-      sha256 "f69e7c8cc05fe661af960e5fa7082052709737d4666214a9b62ce592d602fee5"
+      url "https://github.com/gideaworx/terraform-exporter/releases/download/v1.2.2/terraform-exporter_linux_amd64.zip"
+      sha256 "4269a0e022fe25f17f876bb932074de25cf91126c22598ff283c0f92ddc6ef28"
 
       def install
         bin.install "terraform-exporter"
